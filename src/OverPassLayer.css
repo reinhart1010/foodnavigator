@@ -13,10 +13,6 @@
   background-clip: padding-box;
 }
 
-.leaflet-popup-content-wrapper .leaflet-popup-content{
-  width: 400px!important;
-}
-
 .menutilecontainer{
   display: flex;
   flex-wrap: wrap;

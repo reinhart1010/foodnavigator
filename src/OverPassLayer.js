@@ -63,18 +63,20 @@
                         o = t.elements[e],
                         fillcolor = randomColor();
                     if (!(o.id in this._ids)) {
+                        addToNearby(o);
                         this._ids[o.id] = !0, i = "node" === o.type ? r.default.latLng(o.lat, o.lon) : r.default.latLng(o.center.lat, o.center.lon), n = this.options.markerIcon ? r.default.marker(i, {
                             icon: this.options.markerIcon
-                        }) : r.default.circle(i, 10, {
+                        }) : r.default.circle(i, 5, {
                             stroke: !1,
                             fillColor: fillcolor,
                             fillOpacity: .9
                         });
                         var s = this._getPoiPopupHTML(o, fillcolor),
                             l = r.default.popup().setContent(s);
-                        n.bindPopup(l), this._markers.addLayer(n)
+                        n.bindPopup(l), this._markers.addLayer(n);
                     }
-                }
+                };
+                getNearby();
             },
             onError: function() {},
             onTimeout: function() {},
