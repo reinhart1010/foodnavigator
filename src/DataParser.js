@@ -440,7 +440,7 @@ function formatValue(key, value, prepend, append){
 function formatOpeningHours(value, inline){
   let res = "";
   if (exists(value)){
-    oh = new opening_hours(value, {}, {'locale': 'en'});
+    oh = new opening_hours(value, null, {'locale': 'en'});
     (oh.getState()) ? res = "Open" : res = "Closed";
     if (inline === false){
       return "<b>" + res + "</b><br>opens " + oh.prettifyValue();
